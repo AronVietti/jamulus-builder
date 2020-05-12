@@ -17,3 +17,8 @@ variable "sships" {
   type        = list(string)
   default     = []
 }
+
+variable "jamulus_terraform_state_bucket_name" {
+  type = string
+  default = "terraform-jamulus"
+}

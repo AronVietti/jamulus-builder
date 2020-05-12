@@ -3,8 +3,13 @@ provider "aws" {
   profile          = "personal"
 }
 
+variable "jamulus_terraform_state_bucket_name" {
+  type = string
+  default = "terraform-jamulus"
+}
+
 resource "aws_s3_bucket" "jamulus_terraform_state_bucket" {
-    bucket = "terraform-jamulus"
+    bucket = var.jamulus_terraform_state_bucket_name
     region = "us-west-1"
 }
 
